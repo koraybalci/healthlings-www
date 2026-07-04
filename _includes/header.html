@@ -1,0 +1,132 @@
+<header class="header-area bg-color2 {% if page.layout == "page" or page.layout == "category" or page.layout == "post" or  page.layout == "author" %}page-area{% endif %}">
+<div class="container">
+    <div class="header-nav">
+        <div class="row">
+            <div class="col-lg-auto">
+             {% include header_logo.html %}
+            </div>
+            <!-- <div class="col-lg-10">
+               include navigation.html 
+            </div> -->
+        </div>
+    </div>
+     {% if page.url == "/" %}
+    <div class="header-banner">
+        <div class="row">
+            <div class="col-md-8">
+            <div class="banner-content">
+                <h1 class="big-font1 white-text m-b-50">Healthy habits, one hatchling at a time.</h1>
+                <h5 class="white-text m-b-50">Meet Fastling — a kind little companion for intermittent fasting. Pick your window, start the ring, and watch your streak grow.</h5>
+                <h5 class="white-text m-b-50">Streaks that forgive, badges worth earning, and progress you can actually see. Free, no ads, no account — your data stays on your device.</h5>
+                <h5 class="white-text m-b-50">Coming soon to Google Play.</h5>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="banner-mockup"><div class="phone-frame"><img src="{{site.baseurl}}/assets/images/banner-mockup.png" alt="banner image" class="service-screenshot" /></div></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.layout == "post" %}
+    <div class="header-page-title">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="page-title text-left white-all">
+                <h1 class="big-font1 m-b-30">{{page.title}}</h1>
+
+                <ul class="page-post-date list-inline">
+                    {% assign author =  page.author %}
+		{% if author %}
+					<li class="list-inline-item"><img src="{{site.baseurl}}/assets/images/page-avatar-icon.png" alt="icon"/><a href="/author/{{page.author}}">{{page.author}}</a></li>
+			{% endif %}
+                    <li class="list-inline-item"><img src="{{site.baseurl}}/assets/images/page-clock-icon.png" alt="icon"/>{{page.date | date_to_long_string}}</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.layout == "category" %}
+               <div class="header-page-title">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="page-title text-center white-all">
+                              <div class="author-name">
+							  <h1 class="big-font1"> {{page.title | capitalize }}</h1>
+                             	
+							  </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+			{% endif %}
+			 
+    {% if page.layout == "author" %}
+    {% assign author_posts = site.posts | where: 'author_id', page.author_id %}
+    <div class="header-page-title">
+            <div class="row">
+                <div class="col-md-12">               
+                <div class="page-title text-center white-all">
+                    <div class="author-name">
+                        <img src="{{page.image}}" alt="{{page.name}}"/>
+                        <h1 class="big-font1">{{page.name}}</h1>
+                        {% if page.bio %}
+                                <p>{{page.bio}} </p>
+                            {% endif %}
+                        <ul class="social-link list-inline">
+                            {% if page.facebook %}
+                            <li class="list-inline-item"><a href="{{page.facebook | relative_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                            {% endif %}
+                            {% if page.twitter %}
+                            <li class="list-inline-item"><a href="{{page.twitter | relative_url}}"><i class="fab fa-twitter"></i></a></li>
+                            {% endif %}
+                            {% if page.reddit %}
+                            <li class="list-inline-item"><a href="{{page.reddit | relative_url}}"><i class="fab fa-reddit-alien"></i></a></li>
+                            {% endif %}
+                            {% if page.instagram %}
+                            <li class="list-inline-item"><a href="{{page.instagram | relative_url}}"><i class="fab fa-instagram"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                 
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if page.layout == "page" %}
+    <div class="header-page-title">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="page-title text-center white-all">
+                <h1 class="big-font1">{{page.title}}</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if page.layout == "blog" %}
+    <div class="header-page-title">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="page-title text-center white-all">
+                <h1 class="big-font1">{{page.title}}</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if page.layout == "privacy" %}
+    <div class="header-page-title">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="page-title text-center white-all">
+                <h1 class="big-font1">Privacy Policy</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% include header_shape.html %}
+</div>
+</header>

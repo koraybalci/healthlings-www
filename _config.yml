@@ -1,0 +1,78 @@
+####################################################
+#
+# Welcome to Applin Jekyll Template
+#
+####################################################
+
+# Site settings
+
+title: "Healthlings"
+email: "mentat@gmail.com"
+description: >- # this means to ignore newlines until "baseurl:"
+  Healthlings: healthy habits, one hatchling at a time — a kind fasting tracker with streaks, badges and progress charts
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://healthlings.app" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  koraybalci
+logo: "/assets/images/header-logo.png"
+# mailchimp-list: //redgadgets.us10.list-manage.com/subscribe/post?u=210acce5db69d3d4a04b0e25d&amp;id=08c6708f40"
+
+cover_image: ""
+
+permalink: "/:title"
+
+
+# Build settings
+markdown: kramdown
+
+# Include dot-prefixed directories Jekyll would otherwise skip.
+# Required for /.well-known/ (App Links + Universal Links association files).
+include:
+  - .well-known
+
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+  - jekyll-paginate-v2
+ 
+collections:
+  authors:
+    output: true
+    permalink: /author/:path/  
+
+# Site configuration for the Jekyll 2 Pagination Gem
+pagination:
+  enabled: true
+  debug: true
+  collection: "posts"
+  per_page: 6
+  permalink: "/pages/:num/" # Pages are simple html files
+  title: ":title - page :num"
+  limit: 0
+  sort_field: "date"
+  sort_reverse: true
+  category: "posts"
+  tag: ""
+  locale: ""
+  trail:
+    before: 2
+    after:
+  extension: "html"
+  indexpage: "index"
+
+autopages:
+  enabled: true
+  categories:
+    layouts:
+      - "category.html"
+    title: 'Category -  :cat'
+    permalink: "/category/:cat"
+  collections:
+    layouts:
+      - "category.html"
+    title: " :coll" # :coll is replaced by the collection name
+    permalink: "/:coll/"
+
+feed:
+  collections:
+    posts:
+      path: "/index.xml"
