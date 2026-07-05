@@ -48,6 +48,16 @@ Healthlings terracotta `#a1552f`; also updated in
   in the app repo, then the `serve-web` skill's CDP screenshot script)
 - **`CNAME`** — healthlings.app custom domain
 
+## Deployment status
+
+**Live** at https://healthlings.app with HTTPS enforced (custom domain DNS
+verified and cert issued, 2026-07-05). If the domain ever needs re-pointing or
+GitHub Pages shows a stuck "DNS check in progress," the fix is: Settings →
+Pages → clear the custom domain field, Save, then re-type it and Save again —
+this forces GitHub to redo verification instead of retrying a stuck check.
+DNS itself (A/AAAA records at the registrar, CNAME for `www`) does not need
+touching once set up correctly.
+
 ## Pending (re-enable when the app ships on Google Play)
 
 1. **Store badges** in `_includes/header.html` — official badge images are in
