@@ -1,22 +1,36 @@
 - title: A Family of Lings
-  description: Four little companions, one per habit — Fastling for fasting, Activeling for movement, Sleepling for rest, Soberling for alcohol-free days. Hatch the ones you want; the rest wait in the nest.
+  description: Six little companions, one per habit — fasting, steps, rest, alcohol-free days, running, strength. Hatch the ones you want; the rest wait in the nest.
   image: assets/images/hatchling_ring.png
   screenshot: assets/images/screen-today.png
 - title: Fasting with Fastling
   description: Pick 16:8, 18:6, 20:4, OMAD or a custom window and start with one tap. The friendly ring runs on the clock, not the app — restarts can't break it.
   image: assets/images/hatchling_ring.png
   screenshot: assets/images/screen-fast.png
+- title: Steps with Stepling
+  description: Your daily step goal, counted for you — steps sync automatically from Health Connect or Apple Health. No logging, no fuss; you just walk and Stepling cheers.
+  image: assets/images/hatchling.png
+  screenshot: assets/images/screen-stepling.png
+- title: Running with Runling
+  description: A kind couch-to-distance coach — pick your start and your target, 5k to marathon, and get a week-by-week plan right on your calendar.
+  image: assets/images/hatchling_ring.png
+  screenshot: assets/images/screen-runling.png
+- title: Strength with Liftling
+  description: Four-week training blocks that keep every muscle group in the rotation. Tick off sessions, watch the coverage grid light up, and let rest days be rest days.
+  image: assets/images/hatchling.png
+  screenshot: assets/images/screen-liftling.png
 - title: Streaks That Forgive
   description: Every Ling keeps its own streak, and a one-day gap never breaks one — that's a Nest Day. Soberling's count stays exactly true, always. A slip is a fresh start, never a failure.
   image: assets/images/hatchling.png
   screenshot: assets/images/screen-badges.png
 - title: Progress You Can See
-  description: A weight trend chart with your goal line, a fasting heatmap of your last 15 weeks, and optional body metrics (BMI, waist-to-height, body-fat estimate) explained in plain language.
+  description: A weight trend chart with your goal line, your daily steps, a fasting heatmap of your last 15 weeks, and optional body metrics (BMI, waist-to-height, body-fat estimate) explained in plain language.
   image: assets/images/hatchling_ring.png
   screenshot: assets/images/screen-progress.png
 - title: Kind by Design
   description: No guilt, no shame, no streak anxiety. Your Lings grow with every good day and never shrink. Healthlings celebrates what you did, never scolds you for what you didn't.
   image: assets/images/hatchling.png
+  artwork: assets/images/hatchling.png
 - title: Private by Default
-  description: Free, no ads, no account needed. Your data lives on your device — weight and body measurements are yours alone, full stop.
+  description: Free, no ads, no account needed. Your data lives on your device — weight and body measurements are yours alone, full stop. Health data is read only with your permission and never leaves your phone.
   image: assets/images/hatchling.png
+  screenshot: assets/images/screen-profile.png

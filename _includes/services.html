@@ -14,12 +14,16 @@
                 <div class="service-content">
                     <h4 class="heading-4">{{service.title}}</h4>
                     <p>{{service.description}}</p>
-                    {% assign odd = forloop.index | modulo: 2 %}
-                    {% assign even = forloop.index | modulo: 3 %}
-                    <div class="service-line {% if forloop.first %} line-color1 {% endif %} {% if odd == 0 %} line-color2 {% endif %} {% if even == 0 %} line-color3 {% endif %}"></div>
+                    {% assign lineno = forloop.index0 | modulo: 3 | plus: 1 %}
+                    <div class="service-line line-color{{ lineno }}"></div>
                     {% if service.screenshot %}
                     <div class="phone-frame{% if service.landscape %} phone-frame-landscape{% endif %}">
                         <img src="{{site.baseurl}}/{{service.screenshot}}" alt="{{service.title}} screenshot" class="service-screenshot" />
+                    </div>
+                    {% endif %}
+                    {% if service.artwork %}
+                    <div class="service-artwork">
+                        <img src="{{site.baseurl}}/{{service.artwork}}" alt="{{service.title}} artwork" />
                     </div>
                     {% endif %}
                 </div>
