@@ -2,11 +2,34 @@
 <html lang="en">
 
 <head>
-    <!-- Mobile store redirect (Android → Play Store): re-enable once the app
-         is live on Google Play by restoring the redirect script from
-         pokergrinder-www's default.html with id=com.healthlings.app. -->
-    <!-- Google Analytics: add a Healthlings GA4 property id here when created
-         (do NOT reuse PokerGrinder's G-SVJ1Z292LE). -->
+    <!-- Mobile store redirect: Android → Play Store.
+         Fires before page renders so mobile share-link recipients go
+         straight to the store. Desktop visitors see the landing page.
+         iOS redirect is added once the app ships on the App Store. -->
+    <script>
+      (function () {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android/i.test(ua)) {
+          var sp = new URLSearchParams(window.location.search);
+          var utmParts = [];
+          ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+            var v = sp.get(k);
+            if (v) utmParts.push(k + '=' + v);
+          });
+          var base = 'https://play.google.com/store/apps/details?id=com.healthlings.app';
+          if (utmParts.length) base += '&referrer=' + encodeURIComponent(utmParts.join('&'));
+          window.location.replace(base);
+        }
+      })();
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9KC79VDZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FN9KC79VDZ');
+    </script>
     <!-- meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

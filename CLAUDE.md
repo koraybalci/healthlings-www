@@ -58,12 +58,16 @@ this forces GitHub to redo verification instead of retrying a stuck check.
 DNS itself (A/AAAA records at the registrar, CNAME for `www`) does not need
 touching once set up correctly.
 
-## Pending (re-enable when the app ships on Google Play)
+App is **live on Google Play** as of 2026-07-19
+(`com.healthlings.app`). Store badge, Android mobile-redirect, and GA4
+(`G-FN9KC79VDZ`) are wired up in `_includes/header.html` /
+`_layouts/default.html`.
 
-1. **Store badges** in `_includes/header.html` — official badge images are in
-   `assets/images/` (`Google-Play-Button.png`, `App-Store.png`); follow Google's
-   badge guidelines (plain `<img>` in `<a>`, alt "Get it on Google Play", 60px)
-2. **Mobile store redirect** in `_layouts/default.html` — copy the script from
-   pokergrinder-www with `id=com.healthlings.app`
-3. **Google Analytics** in `_layouts/default.html` — needs a new GA4 property
-   for healthlings.app; never reuse PokerGrinder's `G-SVJ1Z292LE`
+## Pending (re-enable when the app ships on the App Store)
+
+1. **App Store badge** in `_includes/header.html` — add a second
+   `<li>` to the `banner-ads-btn` list using `App-Store.png`, alt
+   "Download on the App Store", 60px, once there's an App Store id
+2. **iOS mobile store redirect** in `_layouts/default.html` — add the
+   `/iPad|iPhone|iPod/` branch (see pokergrinder-www's default.html for
+   the pattern) once there's an App Store id
