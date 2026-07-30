@@ -2,24 +2,27 @@
 <html lang="en">
 
 <head>
-    <!-- Mobile store redirect: Android → Play Store.
+    <!-- Mobile store redirect: Android → Play Store, iOS → App Store.
          Fires before page renders so mobile share-link recipients go
-         straight to the store. Desktop visitors see the landing page.
-         iOS redirect is added once the app ships on the App Store. -->
+         straight to the store. Desktop visitors see the landing page. -->
     <script>
       (function () {
         var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var sp = new URLSearchParams(window.location.search);
+        var utmParts = [];
+        ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+          var v = sp.get(k);
+          if (v) utmParts.push(k + '=' + v);
+        });
         if (/android/i.test(ua)) {
-          var sp = new URLSearchParams(window.location.search);
-          var utmParts = [];
-          ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
-            var v = sp.get(k);
-            if (v) utmParts.push(k + '=' + v);
-          });
-          var base = 'https://play.google.com/store/apps/details?id=com.healthlings.app';
+          var base = 'https://play.google.com/store/apps/details?id={{site.playstore_id}}';
           if (utmParts.length) base += '&referrer=' + encodeURIComponent(utmParts.join('&'));
           window.location.replace(base);
-        }
+        }{% if site.appstore_id != "" %} else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+          var ios = 'https://apps.apple.com/app/id{{site.appstore_id}}';
+          if (utmParts.length) ios += '?' + utmParts.join('&');
+          window.location.replace(ios);
+        }{% endif %}
       })();
     </script>
     <!-- Google Analytics -->

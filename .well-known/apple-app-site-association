@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["9WVA37WPMA.com.healthlings.app"],
+        "components": [
+          { "/": "/link/*", "comment": "Deep links into the app" },
+          { "/": "*", "exclude": true, "comment": "Everything else stays on the marketing site" }
+        ]
+      }
+    ]
+  }
+}

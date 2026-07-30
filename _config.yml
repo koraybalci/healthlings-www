@@ -13,6 +13,12 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://healthlings.app" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  koraybalci
+
+# App store identifiers. appstore_id is the numeric Apple ID from App Store
+# Connect (App Information → General Information → Apple ID). The App Store
+# badge and the iOS mobile redirect only render once this is set.
+playstore_id: "com.healthlings.app"
+appstore_id: "6787569159"
 logo: "/assets/images/header-logo.png"
 # mailchimp-list: //redgadgets.us10.list-manage.com/subscribe/post?u=210acce5db69d3d4a04b0e25d&amp;id=08c6708f40"
 

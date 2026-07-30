@@ -18,9 +18,12 @@
                 <h1 class="big-font1 white-text m-b-50">Healthy habits, one hatchling at a time.</h1>
                 <h5 class="white-text m-b-50">Meet the Lings — six kind little companions: Fastling for fasting, Stepling for daily steps, Sleepling for rest, Soberling for alcohol-free days, Runling for running plans, Liftling for strength. Hatch the ones you want.</h5>
                 <h5 class="white-text m-b-50">Every Ling keeps its own streak, and streaks forgive — a one-day gap never breaks one. Free, no ads, no account — your data stays on your device.</h5>
-                <h5 class="white-text m-b-50">Download free on Google Play. Coming soon to the App Store.</h5>
+                <h5 class="white-text m-b-50">Download free on {% if site.appstore_id != "" %}Google Play and the App Store{% else %}Google Play. Coming soon to the App Store{% endif %}.</h5>
                 <ul class="banner-ads-btn m-0 list-inline">
-                    <li class="list-inline-item"><a href="https://play.google.com/store/apps/details?id=com.healthlings.app"><img src="{{site.baseurl}}/assets/images/Google-Play-Button.png" alt="Get it on Google Play" height="60" /></a></li>
+                    <li class="list-inline-item"><a href="https://play.google.com/store/apps/details?id={{site.playstore_id}}"><img src="{{site.baseurl}}/assets/images/Google-Play-Button.png" alt="Get it on Google Play" height="60" /></a></li>
+                    {% if site.appstore_id != "" %}
+                    <li class="list-inline-item"><a href="https://apps.apple.com/app/id{{site.appstore_id}}"><img src="{{site.baseurl}}/assets/images/App-Store.png" alt="Download on the App Store" height="60" /></a></li>
+                    {% endif %}
                 </ul>
             </div>
             </div>

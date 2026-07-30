@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.healthlings.app",
+      "sha256_cert_fingerprints": [
+        "65:92:0C:80:B1:47:44:98:5B:F6:EF:00:C8:17:73:34:03:15:9E:68:3E:FF:81:4A:0D:26:CD:76:46:3D:A6:6A",
+        "2A:E3:26:DE:EA:F8:40:AB:1F:0C:15:B6:51:0B:FD:EA:26:E7:F7:84:00:58:AA:A7:2B:0B:58:D6:1A:88:00:A9"
+      ]
+    }
+  }
+]

@@ -58,16 +58,35 @@ this forces GitHub to redo verification instead of retrying a stuck check.
 DNS itself (A/AAAA records at the registrar, CNAME for `www`) does not need
 touching once set up correctly.
 
-App is **live on Google Play** as of 2026-07-19
-(`com.healthlings.app`). Store badge, Android mobile-redirect, and GA4
-(`G-FN9KC79VDZ`) are wired up in `_includes/header.html` /
-`_layouts/default.html`.
+App is **live on Google Play** as of 2026-07-19 (`com.healthlings.app`) and on
+the **iOS App Store** as of 2026-07-31 (Apple ID `6787569159`). Both store
+badges, both mobile redirects, and GA4 (`G-FN9KC79VDZ`) are wired up in
+`_includes/header.html` / `_layouts/default.html`.
 
-## Pending (re-enable when the app ships on the App Store)
+## Notes
 
-1. **App Store badge** in `_includes/header.html` — add a second
-   `<li>` to the `banner-ads-btn` list using `App-Store.png`, alt
-   "Download on the App Store", 60px, once there's an App Store id
-2. **iOS mobile store redirect** in `_layouts/default.html` — add the
-   `/iPad|iPhone|iPod/` branch (see pokergrinder-www's default.html for
-   the pattern) once there's an App Store id
+Store ids live in `_config.yml` (`playstore_id`, `appstore_id`) rather than
+inline — the App Store badge, the iOS mobile redirect and the hero download
+copy all key off `appstore_id` being non-empty, so blanking it reverts the site
+to Android-only.
+
+### Universal Links / App Links
+
+`.well-known/apple-app-site-association` claims **only `/link/*`** and
+explicitly excludes everything else, so `/`, `/privacy` and the rest keep
+opening in the browser rather than launching the app. Team id `9WVA37WPMA`.
+Note the mobile redirect in `_layouts/default.html` would otherwise fight a
+broad claim — keep the two consistent if the claimed paths ever widen.
+
+`.well-known/assetlinks.json` lists **two** fingerprints for
+`com.healthlings.app`: the Play app-signing cert (from Play Console → Test and
+release → Setup → App signing) and the upload cert from `healthlings.jks` in
+the app repo, so locally-built APKs verify too. Unlike the AASA file,
+assetlinks.json can't scope paths — the `/link/*` restriction has to live in
+the Android intent-filter.
+
+**Not yet functional.** As of 2026-07-31 the app declares no
+`com.apple.developer.associated-domains` entitlement, no `autoVerify`
+intent-filter, no deep-link package, and `MaterialApp` in `lib/src/app.dart`
+has no route table — so both files are inert until the app side lands. They're
+harmless to serve in the meantime.
