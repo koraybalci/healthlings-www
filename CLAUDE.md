@@ -91,8 +91,8 @@ the app repo, so locally-built APKs verify too. Unlike the AASA file,
 assetlinks.json can't scope paths — the `/link/*` restriction has to live in
 the Android intent-filter.
 
-The app side was wired up on 2026-07-31 (uncommitted in `C:\src\healthlings`
-at time of writing): `associated-domains` entitlement, `autoVerify`
+The app side was wired up on 2026-07-31 (`healthlings` e685b74, v1.0.50):
+`associated-domains` entitlement, `autoVerify`
 intent-filter scoped to `/link/`, and Flutter's built-in link routing disabled
 on both platforms (`flutter_deeplinking_enabled` / `FlutterDeepLinkingEnabled`
 = false) so a share link is a plain app launch. Unlike pokergrinder there's no
