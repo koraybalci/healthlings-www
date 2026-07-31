@@ -41,6 +41,12 @@ Healthlings terracotta `#a1552f`; also updated in
   optional phone-frame screenshot)
 - **`_includes/header.html`** — hero copy + (future) store badges;
   `header_logo.html` — egg logo + wordmark
+- **`link/index.html`** — share/invite landing page (`/link/`). Every share
+  link the app generates points here, because `/link/*` is the only path
+  claimed for App Links / Universal Links. Recipients with the app never see
+  it (the OS opens the app); mobile visitors are bounced to their store by the
+  redirect in `_layouts/default.html`; desktop visitors see the page. `noindex`
+  via the `page.noindex` front-matter flag.
 - **`privacy.html`** — the app's privacy policy (local-only data; keep in sync
   with what the app actually does — it's referenced from the Play Store listing)
 - **`assets/images/screen-*.png`** — app screenshots, captured from the seeded
@@ -85,8 +91,12 @@ the app repo, so locally-built APKs verify too. Unlike the AASA file,
 assetlinks.json can't scope paths — the `/link/*` restriction has to live in
 the Android intent-filter.
 
-**Not yet functional.** As of 2026-07-31 the app declares no
-`com.apple.developer.associated-domains` entitlement, no `autoVerify`
-intent-filter, no deep-link package, and `MaterialApp` in `lib/src/app.dart`
-has no route table — so both files are inert until the app side lands. They're
-harmless to serve in the meantime.
+The app side was wired up on 2026-07-31 (uncommitted in `C:\src\healthlings`
+at time of writing): `associated-domains` entitlement, `autoVerify`
+intent-filter scoped to `/link/`, and Flutter's built-in link routing disabled
+on both platforms (`flutter_deeplinking_enabled` / `FlutterDeepLinkingEnabled`
+= false) so a share link is a plain app launch. Unlike pokergrinder there's no
+`app_links` dependency — share links carry no payload to route to.
+
+Pattern copied from `pokergrinder` / `pokergrinder-www`, where the same setup
+is in production (`/p/*` there, `/link/*` here).

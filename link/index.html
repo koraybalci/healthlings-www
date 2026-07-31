@@ -1,0 +1,49 @@
+---
+layout: default
+permalink: /link/
+noindex: true
+title: "Get Healthlings"
+description: "Healthy habits, one hatchling at a time. Free, no ads, no account."
+---
+<!--
+  Share/invite landing page. Every share link the app generates points here
+  (https://healthlings.app/link/?utm_source=share&...), because /link/* is the
+  only path claimed in .well-known/apple-app-site-association and by the
+  Android intent-filter.
+
+  Three cases:
+    - Recipient has the app  -> the OS opens it; this page is never fetched.
+    - Recipient is on mobile -> the redirect in _layouts/default.html sends
+                                them to the right store, utm tags forwarded.
+    - Recipient is on desktop -> they see this page and pick a store.
+
+  So the markup below is really the desktop fallback. Keep it self-contained;
+  it must make sense to someone who has no idea what Healthlings is.
+-->
+<section class="service-area p-t-100 p-b-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="m-b-30">Healthy habits, one hatchling at a time.</h2>
+        <h5 class="m-b-30">
+          Someone shared Healthlings with you. Meet the Lings &mdash; six kind little
+          companions: Fastling for fasting, Stepling for daily steps, Sleepling for
+          rest, Soberling for alcohol-free days, Runling for running plans, Liftling
+          for strength. Hatch the ones you want.
+        </h5>
+        <h5 class="m-b-50">
+          Every Ling keeps its own streak, and streaks forgive &mdash; a one-day gap
+          never breaks one. Free, no ads, no account &mdash; your data stays on your
+          device.
+        </h5>
+        <ul class="banner-ads-btn m-0 list-inline">
+          <li class="list-inline-item"><a href="https://play.google.com/store/apps/details?id={{site.playstore_id}}&amp;referrer=utm_source%3Dshare%26utm_medium%3Dweb%26utm_campaign%3Dapp_share"><img src="{{site.baseurl}}/assets/images/Google-Play-Button.png" alt="Get it on Google Play" height="60" /></a></li>
+          {% if site.appstore_id != "" %}
+          <li class="list-inline-item"><a href="https://apps.apple.com/app/id{{site.appstore_id}}?ct=share-link"><img src="{{site.baseurl}}/assets/images/App-Store.png" alt="Download on the App Store" height="60" /></a></li>
+          {% endif %}
+        </ul>
+        <p class="m-t-40"><a href="{{site.baseurl}}/">More about Healthlings</a></p>
+      </div>
+    </div>
+  </div>
+</section>
