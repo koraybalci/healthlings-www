@@ -3,14 +3,15 @@ layout: privacy
 ---
 <div style="padding: 50px;">
     <h1>Healthlings: Privacy Policy</h1>
-    <p>Last updated: July 14, 2026</p>
+    <p>Last updated: November 6, 2026</p>
 
-    <p>Healthlings is a health-habits app made by a solo developer for family and friends. This policy is short because the app is simple about your data: it stays with you.</p>
+    <p>Healthlings is a health-habits app made by a solo developer. This policy is short because the app is simple about your data: your health data stays with you. There is no account and no sign-up.</p>
 
-    <h2>What Healthlings stores</h2>
+    <h2>What Healthlings stores on your device</h2>
     <ul>
         <li><strong>Fasting history</strong> — the fasts you start and complete, your chosen protocol and goal.</li>
-        <li><strong>Your other habit logs</strong> — daily steps, sleep, and alcohol-free days, plus running and strength-training plans, for the habits (Lings) you choose to track.</li>
+        <li><strong>Your other habit logs</strong> — daily steps, sleep and alcohol-free days, plus running, strength-training and Flexling plans and sessions, for the habits (Lings) you choose to track.</li>
+        <li><strong>Run routes</strong> — the GPS trace of a run, if you allow route tracing.</li>
         <li><strong>Weight entries and an optional weight goal</strong> — only if you log them.</li>
         <li><strong>Optional body measurements</strong> — height, waist and sex, used solely to calculate the body metrics shown to you (BMI, waist-to-height ratio, body-fat estimate). All optional; the app works fully without them.</li>
         <li><strong>Streaks and badges</strong> — derived from the habits you track.</li>
@@ -18,31 +19,49 @@ layout: privacy
     </ul>
 
     <h2>Where it lives</h2>
-    <p>All of the above is stored <strong>locally on your device</strong>. There is no account, no sign-up, and no server that receives your health data. Deleting the app deletes your data.</p>
+    <p>All of the above is stored <strong>locally on your device</strong>. No Healthlings server receives it. If your phone's own backup is switched on (such as Google's Android backup or iCloud), that backup may include the app's data, under your own account.</p>
+
+    <h2>Deleting your data</h2>
+    <p>Profile → <strong>Delete my data &amp; start fresh</strong> erases everything above from your device, removes the calendar events the app created, cancels its reminders and returns the app to first-run setup. Deleting the app also deletes its data from your device. Neither removes copies in your own device backups or the technical data described under "What leaves your device". To ask about that data, use the contact address below.</p>
+
+    <h2>What leaves your device</h2>
+    <p>Healthlings uses three services to keep the app working and to see which features are useful.</p>
+    <ul>
+        <li><strong>Crash reports (Sentry)</strong> — when the app breaks, a technical report goes to Sentry. It includes the error and stack trace, device model, operating system, app version, which permissions are granted, and an install identifier. Your IP address is visible to Sentry when a report arrives. Reports are not designed to contain your fasting history, weight or body measurements.</li>
+        <li><strong>Usage analytics (Firebase Analytics, by Google)</strong> — events such as a page opened, a Ling hatched, a badge earned or a session completed. These carry preset labels only, never your weight, body measurements, sex, or your own numbers such as duration or distance. Firebase also receives an app instance identifier and basic device information, and may receive your device's advertising identifier. Healthlings doesn't use that identifier for advertising. Analytics are not used on the web version.</li>
+        <li><strong>Feature flags (LaunchDarkly)</strong> — the app fetches its feature settings using a random anonymous identifier, along with basic device and app information. That identifier is reset when you use Delete my data.</li>
+    </ul>
+    <p>Sentry's and Firebase's install identifiers are not reset by Delete my data. These services keep this data under their own retention rules.</p>
 
     <h2>What Healthlings does not do</h2>
     <ul>
         <li>No ads and no ad networks.</li>
-        <li>No selling or sharing of your data with anyone.</li>
-        <li>No collection of your name, email, contacts, or location.</li>
+        <li>No selling of your data, and no sharing it with anyone beyond the services named above.</li>
+        <li>No collection of your name, email or contacts.</li>
+        <li>No tracking of your location outside a run you start yourself.</li>
     </ul>
 
-    <h2>Crash reporting</h2>
-    <p>To keep the app working well, Healthlings may send anonymous crash reports (a technical stack trace when the app breaks) to Sentry, a crash-reporting service. Crash reports never include your fasting history, weight, or body measurements.</p>
+    <h2>Location and run routes</h2>
+    <p>If you allow it, Healthlings uses your location to trace your route <strong>only during a run you start</strong>, including with your phone in a pocket and the screen off. A persistent notification, or iOS's location indicator, shows while this is happening, and it stops when the run ends. Indoor runs don't use location. Routes are stored on your device and are not sent anywhere. If you refuse, the run still works, without a route.</p>
 
-    <h2>Sharing</h2>
-    <p>If you use the share button (for example, to share a badge you earned), the app opens your device's standard share sheet with the text shown to you — nothing is shared unless you choose to send it.</p>
+    <h2>Calendar</h2>
+    <p>If you turn on calendar for a run, strength or Flexling plan, Healthlings adds your training days to your device calendar and removes them if the plan changes. It uses calendar access only to find a calendar to write to and to manage its own events. It does not read or upload your other events. Anything synced by your calendar provider is handled by that provider.</p>
+
+    <h2>Sharing and export</h2>
+    <p>If you share something (for example, a badge you earned or your weekly recap), the app opens your device's standard share sheet — nothing is sent unless you choose to send it. The AI export works the same way: it builds a summary of your own data, including your body details if you leave them switched on, which you can read, then copy or share wherever you decide. What happens to it after that is up to you and the service you send it to.</p>
 
     <h2>Health Connect and Apple Health</h2>
-    <p>Healthlings can optionally connect to <strong>Health Connect</strong> (on Android) or <strong>Apple Health</strong> (on iOS) so you don't have to log everything by hand. This only happens after you explicitly tap "Connect Health" and grant permission — the app never touches this data otherwise.</p>
+    <p>Healthlings can optionally connect to <strong>Health Connect</strong> (on Android) or <strong>Apple Health</strong> (on iOS) so you don't have to log everything by hand. This only happens after you tap Connect and grant permission. The app asks only for what the Lings you've hatched need.</p>
     <p>With your permission, Healthlings <strong>reads only</strong> the following:</p>
     <ul>
         <li><strong>Steps</strong> — to count your daily steps toward your step goal.</li>
         <li><strong>Sleep sessions</strong> — to fill in last night's sleep for your rest habit.</li>
         <li><strong>Exercise and workout sessions</strong> — to mark scheduled runs and strength sessions complete.</li>
+        <li><strong>Distance and calories burned</strong> — read along with a workout, because the workout can't be read without them on Android. Distance is used for your runs; calories are not shown or stored.</li>
         <li><strong>Body weight</strong> — to fill in weigh-ins from your smart scale or other apps on your weight chart.</li>
     </ul>
-    <p>Healthlings only reads this information; it never writes to Health Connect or Apple Health. The data is used solely on your device to show you your own progress. It is <strong>never transmitted off your device, never shared with anyone, and never used for advertising</strong>, and it is never included in crash reports. You can revoke access at any time — in Health Connect on Android, or in the Health app / Settings on iOS — and you can always log by hand instead. Deleting the app removes any imported copies stored on your device.</p>
+    <p>On Android, if you turn on Stepling's evening heads-up, the app also reads your step count in the background once a day to check on your streak.</p>
+    <p>Healthlings only reads this information; it never writes to Health Connect or Apple Health. The data is used solely on your device to show you your own progress. It is <strong>never sent to any server, never sold, and never used for advertising</strong>. It leaves your device only if you choose to share or export it yourself, as described above. You can revoke access at any time — in Health Connect on Android, or in the Health app / Settings on iOS — and you can always log by hand instead (Stepling is the exception: it counts steps from Health only).</p>
 
     <h2>Future features</h2>
     <p>If optional accounts and sync between your devices arrive in a future version, they will be opt-in, this policy will be updated first, and weight data will remain private by default.</p>
